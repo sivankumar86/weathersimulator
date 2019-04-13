@@ -2,11 +2,15 @@ package com.fun.weather.simulator
 
 import com.fun.weather.simulator.dao.WeatherData
 
+import scala.util.Random
+
 class PostitionGenerator extends MockGenerator {
 
+  val r=new Random()
 
   override def generator(wd: WeatherData): WeatherData = {
-    wd.position=s"""${config.getOrElse("lat","00")},${config.getOrElse("lan","00")},${config.getOrElse("ele","00")}""";
+
+    wd.position=s"""${config.getOrElse("lat","00")},${config.getOrElse("lon","00")},${config.getOrElse("ele",20+r.nextInt(50))}""";
     wd
   }
 
