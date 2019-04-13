@@ -31,7 +31,7 @@ object Test extends App {
  |  ]
     """.stripMargin
 
- /* val fileContents = Source.fromFile("/Users/srramas/Downloads/city.list.json").getLines.mkString
+  val fileContents = Source.fromFile("/Users/srramas/Downloads/city.list.json").getLines.mkString
 
 
   //val result = JSON.parseFull(fileContents)
@@ -44,14 +44,14 @@ object Test extends App {
     D(lon)=coord("lon").toString
     D(lat)=coord("lat").toString
     D(name)=j("name")
-    if(country=="AU")
+    if(country=="US")
   }{
    a.write(s"${country},${name},${lon},${lat}\n")
   }
 
-  a.close()*/
+  a.close()
 
-  def configLoader(numberofCity:Int) ={
+ /* def configLoader(numberofCity:Int) ={
 
     val fileContents = Source.fromResource("country").getLines
     fileContents.take(numberofCity).map(x=>{
@@ -62,7 +62,7 @@ object Test extends App {
     fileContents.foreach(println)
   }
 
-configLoader(3)
+configLoader(3)*/
 
 
 
