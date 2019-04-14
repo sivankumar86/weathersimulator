@@ -6,7 +6,8 @@ import scala.util.Random
 
 
 /**
-  * Condition generator based on local
+  * Condition generator based on location
+  * @TODO add more condition and description as well (clear sky and possible rain etc..)
   */
 class ConditionGenerator  extends MockGenerator {
   val condition=List("Rain","Snow","Sunny")

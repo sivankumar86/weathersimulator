@@ -4,7 +4,9 @@ import com.fun.weather.simulator.dao.WeatherData
 
 import scala.util.Random
 
-
+/**
+  * Random number >900 @todo. It can have logic based on condition
+  */
 class PressureGenerator extends MockGenerator {
 
   val r=new Random()

@@ -1,5 +1,7 @@
 package com.fun.weather.simulator
 
-class ConditionGeneratorTest {
+import org.scalatest.{FunSuite}
+
+class ConditionGeneratorTest extends FunSuite{
 
 }

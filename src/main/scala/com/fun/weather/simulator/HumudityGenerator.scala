@@ -4,6 +4,9 @@ import com.fun.weather.simulator.dao.WeatherData
 
 import scala.util.Random
 
+/**
+  * it generates humdity based on
+  */
 class HumudityGenerator extends MockGenerator {
 
   val r= new Random()

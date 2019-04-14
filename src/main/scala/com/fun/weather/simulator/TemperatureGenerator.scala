@@ -5,7 +5,7 @@ import com.fun.weather.simulator.dao.WeatherData
 import scala.util.Random
 
 /**
-  *
+  * set temperature according to condition
   */
 class TemperatureGenerator extends MockGenerator {
   val r = new Random()

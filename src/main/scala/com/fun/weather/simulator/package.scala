@@ -4,6 +4,9 @@ import com.fun.weather.simulator.dao.WeatherData
 
 import scala.io.Source
 
+/**
+  * Implemented generator chain to construct the weather data
+  */
 package object simulator {
 
   val weatherChain= List(PostitionGenerator(),LocalTimeGenerator(),ConditionGenerator(), HumudityGenerator(),TemperatureGenerator(),PressureGenerator())

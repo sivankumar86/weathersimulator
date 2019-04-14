@@ -5,7 +5,6 @@ import com.fun.weather.simulator.dao.WeatherData
 
 import scala.io.Source
 
-import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 
@@ -40,10 +39,19 @@ object WeatherDataGenerator extends App {
 
   log.info(s" arguments ${options}")
 
+  /**
+    * default number of cities are 30 and it can be configured
+    */
   val config_list=configLoader(options.getOrElse('numberofcity,"30").toInt)
 
+  /**
+    * @TODO output file cannot be changed which can be passed as argument and file format like parquet,json etc..
+    */
   val writer=Writer.getWriter("csv","output.csv")
 
+  /**
+    * Default number of hours are 10 and it can be changed using parameter
+    */
   val hours=options.getOrElse('hours,"10").toInt
 
   for(i<-0 to hours){
@@ -55,6 +63,14 @@ object WeatherDataGenerator extends App {
 
   }
   writer.close()
+
+  /**
+    * create a line based on custom delimiter
+    *
+    * @param weatherData
+    * @param separator
+    * @return
+    */
   def lineFormat(weatherData: WeatherData,separator:String): String ={
     s"""${weatherData.location}
       |${separator}

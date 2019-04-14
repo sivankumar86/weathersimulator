@@ -6,6 +6,9 @@ import java.io.{File, PrintWriter}
 import scala.io.Source
 import scala.util.parsing.json._
 
+/**
+  * Extract cities and position from open database
+  */
 object Test extends App {
 
   class CC[T] { def unapply(a:Any):Option[T] = Some(a.asInstanceOf[T]) }
