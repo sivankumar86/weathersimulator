@@ -84,7 +84,7 @@ object WeatherDataGenerator extends App {
       |${separator}
       |${weatherData.pressure}
       |${separator}
-      |${weatherData.humitity}""".stripMargin.replaceAll("\n", "")
+      |${weatherData.humidity}""".stripMargin.replaceAll("\n", "")
   }
 
 

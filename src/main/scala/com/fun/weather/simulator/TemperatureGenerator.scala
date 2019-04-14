@@ -10,15 +10,14 @@ import scala.util.Random
 class TemperatureGenerator extends MockGenerator {
   val r = new Random()
 
-  override def generator(wd: WeatherData): WeatherData = { wd.condition match {
+  override def generator(wd: WeatherData): WeatherData =  wd.copy(temperature=wd.condition match {
 
-    case "Rain" =>wd.temperature=f"+${10+r.nextInt(10)+r.nextDouble()}%2.2f"
-    case "Sunny" =>wd.temperature=f"+${20+r.nextInt(20)+r.nextDouble()}%2.2f"
-    case "Snow" =>wd.temperature=f"-${r.nextInt(10)+r.nextDouble()}%2.2f"
+    case "Rain" =>f"+${10+r.nextInt(10)+r.nextDouble()}%2.2f"
+    case "Sunny" =>f"+${20+r.nextInt(20)+r.nextDouble()}%2.2f"
+    case "Snow" =>f"-${r.nextInt(10)+r.nextDouble()}%2.2f"
 
-  }
-  wd
-  }
+  })
+
 
   override def init(map: Map[String, String]): Unit = config ++ map
 }

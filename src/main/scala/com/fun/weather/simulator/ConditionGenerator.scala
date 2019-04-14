@@ -13,11 +13,9 @@ class ConditionGenerator  extends MockGenerator {
   val condition=List("Rain","Snow","Sunny")
   val r=new Random()
 
-  override def generator(wd: WeatherData): WeatherData = {
+  override def generator(wd: WeatherData): WeatherData =
+    wd.copy(condition=condition(r.nextInt(3)))
 
-    wd.condition=condition(r.nextInt(3))
-    wd
-  }
   override def init(map: Map[String, String]): Unit = config ++ map
 }
 

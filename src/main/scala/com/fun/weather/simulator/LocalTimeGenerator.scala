@@ -8,8 +8,8 @@ import java.time.{LocalDateTime, LocalTime}
   */
 class LocalTimeGenerator extends MockGenerator {
 
-  override def generator(wd: WeatherData): WeatherData = {wd.localTime=LocalDateTime.now().
-    plusHours(config.getOrElse("hours","0").toInt);wd}
+  override def generator(wd: WeatherData): WeatherData = wd.copy(localTime=LocalDateTime.now().
+    plusHours(config.getOrElse("hours","0").toInt))
 
   override def init(map: Map[String, String]): Unit = config ++= map
 }

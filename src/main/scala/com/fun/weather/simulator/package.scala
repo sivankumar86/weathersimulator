@@ -9,7 +9,7 @@ import scala.io.Source
   */
 package object simulator {
 
-  val weatherChain= List(PostitionGenerator(),LocalTimeGenerator(),ConditionGenerator(), HumudityGenerator(),TemperatureGenerator(),PressureGenerator())
+  val weatherChain= List(PostitionGenerator(),LocalTimeGenerator(),ConditionGenerator(), HumidityGenerator(),TemperatureGenerator(),PressureGenerator())
 
 
   /**
@@ -29,8 +29,8 @@ package object simulator {
     * @return
     */
   def generateRow(map: Map[String,String]): WeatherData ={
-      val wd=new WeatherData(location = map.getOrElse("location","Unknown"))
-     for(weather <- weatherChain) { weather.init(map);weather.generator(wd)}
+      var wd=new WeatherData(location = map.getOrElse("location","Unknown"))
+     for(weather <- weatherChain) { weather.init(map);wd=weather.generator(wd)}
      wd
 
   }

@@ -11,11 +11,11 @@ class PostitionGenerator extends MockGenerator {
 
   val r=new Random()
 
-  override def generator(wd: WeatherData): WeatherData = {
+  override def generator(wd: WeatherData): WeatherData =
 
-    wd.position=s"""${config.getOrElse("lat","00")},${config.getOrElse("lon","00")},${config.getOrElse("ele",20+r.nextInt(50))}""";
-    wd
-  }
+    wd.copy(position=s"""${config.getOrElse("lat","00")},${config.getOrElse("lon","00")},${config.getOrElse("ele",20+r.nextInt(50))}""");
+
+
 
   override def init(map: Map[String, String]): Unit = config++=map
 }

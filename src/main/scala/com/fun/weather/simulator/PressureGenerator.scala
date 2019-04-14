@@ -11,7 +11,7 @@ class PressureGenerator extends MockGenerator {
 
   val r=new Random()
 
-  override def generator(wd: WeatherData): WeatherData = {wd.pressure=f"${900+r.nextInt(300)+r.nextDouble()}%3.2f";wd }
+  override def generator(wd: WeatherData): WeatherData = wd.copy(pressure=f"${900+r.nextInt(300)+r.nextDouble()}%3.2f")
 
   override def init(map: Map[String, String]): Unit = config ++ map
 }

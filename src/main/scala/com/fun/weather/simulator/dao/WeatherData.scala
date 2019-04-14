@@ -12,10 +12,10 @@ import java.time.LocalDateTime
   * @param condition
   * @param temperature
   * @param pressure
-  * @param humitity
+  * @param humidity
   */
-case class WeatherData (var location:String="", var position:String="",
-                        var localTime:LocalDateTime=LocalDateTime.now(),
-                        var condition:String="",var temperature:String="",
-                        var pressure:String="0.0",var humitity:String="0")
+case class WeatherData ( location:String="",  position:String="",
+                         localTime:LocalDateTime=LocalDateTime.now(),
+                         condition:String="", temperature:String="",
+                         pressure:String="0.0", humidity:String="0")
 
